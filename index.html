@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login / Register</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" id="loginTab" onclick="showForm('login')">Login</button>
+    <button class="tab-btn" id="registerTab" onclick="showForm('register')">Register</button>
+  </div>
+
+  <!-- LOGIN FORM -->
+  <form id="loginForm" class="form active" novalidate>
+    <h1>Welcome <span>Back</span></h1>
+    <p class="sub">Welcome to our loginpage</p>
+
+    <div class="field" id="loginEmailField">
+      <label for="loginEmail">Email</label>
+      <input type="text" id="loginEmail" placeholder="you@example.com">
+      <span class="error" id="loginEmailError"></span>
+    </div>
+
+    <div class="field" id="loginPasswordField">
+      <label for="loginPassword">Password</label>
+      <input type="password" id="loginPassword" placeholder="Your password">
+      <span class="error" id="loginPasswordError"></span>
+    </div>
+
+    <div class="row">
+      <label><input type="checkbox" id="remember"> Remember me</label>
+    </div>
+
+    <button type="submit" class="submit-btn">Login</button>
+
+    <div class="success" id="loginSuccess">✔ Login successful!.</div>
+
+    <div class="switch-link">Don't have an account? <a href="#" onclick="showForm('register'); return false;">Register</a></div>
+  </form>
+
+  <!-- REGISTER FORM -->
+  <form id="registerForm" class="form" novalidate>
+    <h1>Create <span>Account</span></h1>
+    <p class="sub">Welcome to our Register Page</p>
+
+    <div class="field" id="nameField">
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" placeholder="Your full name">
+      <span class="error" id="nameError"></span>
+    </div>
+
+    <div class="field" id="emailField">
+      <label for="email">Email</label>
+      <input type="text" id="email" placeholder="you@example.com">
+      <span class="error" id="emailError"></span>
+    </div>
+
+    <div class="field" id="phoneField">
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" placeholder="10 digit number">
+      <span class="error" id="phoneError"></span>
+    </div>
+
+    <div class="field" id="passwordField">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Min 8 characters">
+      <div class="strength"><div class="strength-bar" id="strengthBar"></div></div>
+      <span class="error" id="passwordError"></span>
+    </div>
+
+    <div class="field" id="confirmField">
+      <label for="confirm">Confirm Password</label>
+      <input type="password" id="confirm" placeholder="Re-enter password">
+      <span class="error" id="confirmError"></span>
+    </div>
+
+    <div class="terms">
+      <input type="checkbox" id="terms">
+      <label for="terms">I agree to the Terms &amp; Conditions</label>
+    </div>
+    <span class="error" id="termsError"></span>
+
+    <button type="submit" class="submit-btn">Register</button>
+
+    <div class="success" id="registerSuccess">✔ Account created!, welcome aboard.</div>
+
+    <div class="switch-link">Already have an account? <a href="#" onclick="showForm('login'); return false;">Login</a></div>
+  </form>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

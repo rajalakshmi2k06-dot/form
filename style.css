@@ -1,0 +1,242 @@
+:root{
+  --black:#0d0d0d;
+  --black-soft:#161616;
+  --red:#e0102b;
+  --red-dark:#8c0a1b;
+  --grey:#2a2a2a;
+  --text:#f2f2f2;
+  --muted:#9a9a9a;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(224,16,43,0.15), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(224,16,43,0.1), transparent 40%),
+    var(--black);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color:var(--text);
+  padding:20px;
+}
+
+.card{
+  width:100%;
+  max-width:440px;
+  background:var(--black-soft);
+  border:1px solid var(--grey);
+  border-top:4px solid var(--red);
+  border-radius:10px;
+  padding:32px 32px 36px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.6);
+}
+
+/* Tabs */
+.tabs{
+  display:flex;
+  margin-bottom:24px;
+  background:var(--black);
+  border:1px solid var(--grey);
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.tab-btn{
+  flex:1;
+  padding:12px;
+  background:transparent;
+  border:none;
+  color:var(--muted);
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:background .2s, color .2s;
+}
+
+.tab-btn.active{
+  background:linear-gradient(135deg, var(--red), var(--red-dark));
+  color:#fff;
+}
+
+/* Forms */
+.form{
+  display:none;
+}
+
+.form.active{
+  display:block;
+}
+
+.form h1{
+  margin:0 0 6px;
+  font-size:24px;
+  letter-spacing:1px;
+}
+
+.form h1 span{ color:var(--red); }
+
+.form p.sub{
+  margin:0 0 26px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.field{
+  margin-bottom:18px;
+  position:relative;
+}
+
+.field label{
+  display:block;
+  font-size:13px;
+  margin-bottom:6px;
+  color:var(--muted);
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+}
+
+.field input{
+  width:100%;
+  padding:12px 14px;
+  background:var(--black);
+  border:1px solid var(--grey);
+  border-radius:6px;
+  color:var(--text);
+  font-size:15px;
+  outline:none;
+  transition:border-color .2s, box-shadow .2s;
+  font-family:inherit;
+}
+
+.field input:focus{
+  border-color:var(--red);
+  box-shadow:0 0 0 3px rgba(224,16,43,0.25);
+}
+
+.error{
+  color:var(--red);
+  font-size:12px;
+  margin-top:6px;
+  min-height:14px;
+  display:block;
+}
+
+.field.invalid input{
+  border-color:var(--red);
+}
+
+/* Password strength */
+.strength{
+  height:4px;
+  border-radius:2px;
+  margin-top:8px;
+  background:var(--grey);
+  overflow:hidden;
+}
+.strength-bar{
+  height:100%;
+  width:0%;
+  background:var(--red);
+  transition:width .25s, background .25s;
+}
+
+/* Row (remember me / forgot password) */
+.row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin:4px 0 22px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.row label{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  cursor:pointer;
+}
+
+.row input[type="checkbox"]{
+  accent-color:var(--red);
+}
+
+.row a{
+  color:var(--red);
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* Terms checkbox (register) */
+.terms{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  margin:20px 0;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.terms input{
+  accent-color:var(--red);
+  margin-top:2px;
+}
+
+/* Submit button */
+.submit-btn{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:6px;
+  background:linear-gradient(135deg, var(--red), var(--red-dark));
+  color:#fff;
+  font-size:15px;
+  font-weight:600;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:transform .15s, box-shadow .15s;
+}
+
+.submit-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(224,16,43,0.4);
+}
+
+.submit-btn:active{ transform:translateY(0); }
+
+/* Success message */
+.success{
+  display:none;
+  margin-top:18px;
+  padding:12px 14px;
+  background:rgba(224,16,43,0.1);
+  border:1px solid var(--red);
+  border-radius:6px;
+  color:var(--text);
+  font-size:14px;
+  text-align:center;
+}
+
+.success.show{ display:block; }
+
+/* Switch link */
+.switch-link{
+  text-align:center;
+  margin-top:20px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.switch-link a{
+  color:var(--red);
+  text-decoration:none;
+  font-weight:600;
+}
