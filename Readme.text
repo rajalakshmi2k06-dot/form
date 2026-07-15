@@ -1,0 +1,65 @@
+# Login & Register Form App
+
+A simple, responsive **Login / Register** form web app with a red and black theme, built using plain **HTML, CSS, and JavaScript** (no frameworks or libraries needed).
+
+## 📁 Project Structure
+
+```
+project-folder/
+│
+├── index.html      → Page structure (Login form + Register form + tabs)
+├── style.css       → Red & black theme styling
+└── script.js       → Tab switching + form validation logic
+```
+
+## ✨ Features
+
+- **Tab switching** between Login and Register forms (no page reload)
+- **Login form**
+  - Email format validation
+  - Password required check
+  - "Remember me" checkbox
+  - "Forgot password" link
+- **Register form**
+  - Full name validation
+  - Email format validation
+  - Phone number validation (10 digits)
+  - Password strength meter (weak → strong, color changes live)
+  - Confirm password match check
+  - Terms & Conditions checkbox required
+  - Auto-switches to Login tab after successful registration
+- Fully responsive — works on mobile and desktop
+- Clean red (`#e0102b`) and black (`#0d0d0d`) UI theme
+
+## 🚀 How to Run
+
+1. Download all 3 files (`index.html`, `style.css`, `script.js`) into the **same folder**.
+2. Double-click `index.html` to open it in any browser (Chrome, Edge, Firefox).
+3. That's it — no server or installation needed.
+
+## 🛠️ How It Works
+
+| File | Responsibility |
+|------|----------------|
+| `index.html` | Contains the markup for both forms and links to `style.css` and `script.js` |
+| `style.css` | Defines colors (via CSS variables), layout, input styles, button styles, and the `.active` class that shows/hides forms |
+| `script.js` | Handles tab switching (`showForm()`), input validation (`setError()`), password strength calculation, and form submission logic |
+
+## 🎨 Customizing the Theme
+
+All colors are defined as CSS variables at the top of `style.css`:
+
+```css
+:root{
+  --black:#0d0d0d;
+  --red:#e0102b;
+  --red-dark:#8c0a1b;
+}
+```
+
+Change these values to switch the entire theme to any color (e.g. blue, green) without touching the rest of the CSS.
+
+## 📌 Notes
+
+- This is a **front-end only** demo — form submissions currently only show a success message and do not connect to a real backend/database.
+- To make it functional (store users, check login), connect the form submit logic in `script.js` to a backend API (Node.js, PHP, Firebase, etc.).
